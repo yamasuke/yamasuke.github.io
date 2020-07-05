@@ -1,7 +1,22 @@
 body {
-	background-color: black;
+	background-color: #000000;
 }
 
-p {
+.main {
+
+
+}
+
+div.topo{
+	
+	font-family: Arial black, Helvetica;
+
 	color: white;
+}
+
+h1.topo{
+}
+
+div.to-do{
+	color: red;
 }
