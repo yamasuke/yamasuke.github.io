@@ -13,8 +13,7 @@
             });
 
 
-        </script> 
-      <script type="text/javascript">
+       
 
       	console.log("ID Lista_Heroi", $("Lista_Heroi").val());
       	console.log("Valor Select", this.value);
@@ -27,15 +26,18 @@
             console.log("Valor Select", this.value);
             console.log("Valor Src", img.src);
 
+            $("#Lista_Heroi").change(function(){
+	        $("#icone").attr('scr', $("#Lista_Heroi").val());
+	    });
+
 
             return false;
 	    });
 	        document.getElementById("Lista_Heroi").onchange = setIcon();
 
 
-	    $("#Lista_Heroi").on("change", function(){
-	        console.log("Valor", this.value);
-	    });
+
+	   
 
 	     
       </script>
