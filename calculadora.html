@@ -4,7 +4,6 @@
 		
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<script type="text/javascript" src="js/icone.js"></script>
    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script> 
@@ -12,6 +11,13 @@
               $("#header").load("header.html"); 
               $("#footer").load("footer.html"); 
             });
+
+             function setIcon() {
+            var img = document.getElementById("image");
+            img.src = this.value;
+            return false;
+	        }
+	        document.getElementById("Lista_Heroi").onchange = setIcon;
         </script> 
       
 
@@ -22,8 +28,8 @@
 	<form id="calc" action="">
 
 		<label>Herói</label>
-			<select>
-				<option id="1">Amy</option>
+			<select class="heroi-selection" id="Lista_Heroi">
+				<option id="1" value="images/Amy.png">Amy</option>
 				<option id="2">Arme</option>
 				<option id="3">Arsad</option>
 				<option id="4">Asin</option>
@@ -52,7 +58,7 @@
 				<option id="27">Zero</option>
 			</select>
 
-		<label id="icone"></label>
+		<img id="icone" />
 	</form>
 
 	</div>
