@@ -12,35 +12,23 @@
               $("#footer").load("footer.html"); 
             });
 
+        </script>
 
-       
-
-      	console.log("ID Lista_Heroi", $("Lista_Heroi").val());
-      	console.log("Valor Select", this.value);
+        <script type="text/javascript">
       	
-      	$(window).on("load", function setIcon() {
+      	function setIcon() {
             var img = document.getElementById("icone");
-            console.log("Valor Src", img.src);
-            img.src = this.value;
+            var select = document.getElementById("Lista_Heroi");
+            var option = select.options[select.selectedIndex];
 
-            console.log("Valor Select", this.value);
-            console.log("Valor Src", img.src);
+            img.src = option.value;
+	    };
 
-            $("#Lista_Heroi").change(function(){
-	        $("#icone").attr('scr', $("#Lista_Heroi").val());
-	    });
+	    //document.getElementById("Lista_Heroi").onChange = setIcon();
 
-
-            return false;
-	    });
-	        document.getElementById("Lista_Heroi").onchange = setIcon();
-
-
-
-	   
-
-	     
+	    setIcon();
       </script>
+
 
 </head>
 <body>
@@ -49,7 +37,7 @@
 	<form id="calc">
 
 		<label>Herói</label>
-			<select class="heroi-selection" id="Lista_Heroi" >
+			<select class="heroi-selection" id="Lista_Heroi" onchange="setIcon()">
 				<option id="1" value="images/Amy.png" selected="selected">Amy</option>
 				<option id="2" value="images/Arme.png">Arme</option>
 				<option id="3">Arsad</option>
@@ -81,7 +69,6 @@
 
 		<img id="icone" src="images/Null.png" />
 	</form>
-
 	</div>
 
 
