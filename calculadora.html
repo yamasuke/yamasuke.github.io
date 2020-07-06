@@ -12,25 +12,44 @@
               $("#footer").load("footer.html"); 
             });
 
-             function setIcon() {
-            var img = document.getElementById("image");
-            img.src = this.value;
-            return false;
-	        }
-	        document.getElementById("Lista_Heroi").onchange = setIcon;
+
         </script> 
-      
+      <script type="text/javascript">
+
+      	console.log("ID Lista_Heroi", $("Lista_Heroi").val());
+      	console.log("Valor Select", this.value);
+      	
+      	$(window).on("load", function setIcon() {
+            var img = document.getElementById("icone");
+            console.log("Valor Src", img.src);
+            img.src = this.value;
+
+            console.log("Valor Select", this.value);
+            console.log("Valor Src", img.src);
+
+
+            return false;
+	    });
+	        document.getElementById("Lista_Heroi").onchange = setIcon();
+
+
+	    $("#Lista_Heroi").on("change", function(){
+	        console.log("Valor", this.value);
+	    });
+
+	     
+      </script>
 
 </head>
 <body>
 	<div id="header"></div>
 	<div class="form_calc">
-	<form id="calc" action="">
+	<form id="calc">
 
 		<label>Herói</label>
-			<select class="heroi-selection" id="Lista_Heroi">
-				<option id="1" value="images/Amy.png">Amy</option>
-				<option id="2">Arme</option>
+			<select class="heroi-selection" id="Lista_Heroi" >
+				<option id="1" value="images/Amy.png" selected="selected">Amy</option>
+				<option id="2" value="images/Arme.png">Arme</option>
 				<option id="3">Arsad</option>
 				<option id="4">Asin</option>
 				<option id="5">Canaban</option>
@@ -58,7 +77,7 @@
 				<option id="27">Zero</option>
 			</select>
 
-		<img id="icone" />
+		<img id="icone" src="images/Null.png" />
 	</form>
 
 	</div>
